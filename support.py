@@ -8,5 +8,3 @@ def import_csv_layout(path):
             terrain_map.append(list(row))
         return terrian_map
   
-  
-print(import_csv_layout('../map/map_FloorBlocks.csv'))
