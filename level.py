@@ -18,6 +18,9 @@ class Level:
         self.create_map()
         
     def create_map(self):
+        layout = {
+                'boundary': import_csv_layout('../map/map_FloorBlocks.csv')
+        }
         #for row_index,row in enumerate(WORLD_MAP):
         #    for col_index, col in enumerate(row):
         #        x = col_index * TILESIZE
