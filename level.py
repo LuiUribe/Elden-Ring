@@ -3,6 +3,7 @@ from settings import *
 from tile import Tile
 from player import Player
 from debug import debug
+from support import *
 
 class Level:
     def __init__(self):
@@ -27,8 +28,8 @@ class Level:
                 for col_index, col in enumerate(row):
                     x = col_index * TILESIZE
                     y = row_index * TILESIZE
-                if style == 'boundary':
-                    Tile()
+                    if style == 'boundary':
+                        Tile((x,y),[self.visible_sprites,self.obstacle_sprites],'invisible')
         #       if col == 'x':
         #           Tile((x,y),[self.visible_sprites,self.obstacle_sprites,self.obstacle_sprites])
         #       if col == 'p':
