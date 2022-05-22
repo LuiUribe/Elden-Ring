@@ -61,5 +61,7 @@ class Enemy(Entity):
             self.status = 'idle'
 
     def update(self):
-        self.get_status(player)
         self.move(self.speed)
+        
+    def enemy_update(self,player):
+        self.get_status(player?)
