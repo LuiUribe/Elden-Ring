@@ -60,6 +60,11 @@ class Level:
         self.current_attack = Weapon(self.player,[self.visible_sprites])
         
         
+    def create_magic(self,style,strength,cost):
+        print(style)
+        print(strength)
+        print(cost)
+         
     def destroy_attack(self):
         if self.current_attack:
             self.current_attack.kill()
