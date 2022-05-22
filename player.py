@@ -115,7 +115,6 @@ class Player(pygame.sprite.Sprite):
                 
                  self.magic = list(magic_data.keys())[self.magic_index]
                   
-            
     def get_status(self):
         
         # idle status
