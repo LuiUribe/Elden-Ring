@@ -70,7 +70,7 @@ class Level:
                             elif col == '391': monster_name = 'spirit'
                             elif col == '392': monster_name ='raccoon'
                             else: monster_name = 'squid'
-                            Enemy(monster_name,(x,y),[self.visible_sprites])
+                            Enemy(monster_name,(x,y),[self.visible_sprites],self.obstacle_sprites)
                             
                             
                             
