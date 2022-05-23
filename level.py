@@ -90,6 +90,7 @@ class Level:
     def create_attack(self):
         self.current_attack = Weapon(self.player,[self.visible_sprites,self.attack_sprites])
         
+        
     def create_magic(self,style,strength,cost):
         print(style)
         print(strength)
@@ -106,7 +107,9 @@ class Level:
                 collision_sprites = pygame.sprite.spritecollide(attack_sprite,self.attackable_sprites,False)
                 if collision_sprites:
                     for target_sprite in collision_sprites:
-                        if target_sprite.sprite_type == 'grass'
+                        if target_sprite.sprite_type == 'grass':
+                            pos = target_sprite.rect.center
+                            self.animation_player.create_grass_particles(pos,[self.visible_sprites])
                             target_sprite.kill()
                         else:
                             target_sprite.get_damage(self.player,attack_sprite.sprite_type)
