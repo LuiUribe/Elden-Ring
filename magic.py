@@ -6,7 +6,7 @@ class MagicPlayer:
         self.animation_player = animation_player
         
     def heal(self):
-        pass
+        print('heal')
       
     def flame(self):
         pass
