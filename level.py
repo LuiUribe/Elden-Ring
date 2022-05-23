@@ -89,7 +89,7 @@ class Level:
                                 self.obstacle_sprites,
                                 self.damage_player,
                                 self.trigger_death_particles,
-                                self.add_xp)
+                                self.add_exp)
         
     def create_attack(self):
         self.current_attack = Weapon(self.player,[self.visible_sprites,self.attack_sprites])
@@ -133,7 +133,7 @@ class Level:
         
         self.animation_player.create_particles(particle_type,pos.self.visible_sprites)
         
-    def add_xp(self,amount):
+    def add_exp(self,amount):
         
         self.player.exp += amount
        
