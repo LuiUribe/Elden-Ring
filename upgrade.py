@@ -9,11 +9,13 @@ class Upgrade:
       self.player = player
       self.attribute_nr = len(player.stats)
       self.attribute_names = list(player.stats.keys())
+      self.max_values = list(player.max_stats.values)
       self.font = pygame.font.Font('UI_FONT, UI_FONT_SIZE')
       
-      # item dimensions
+      # item creation
       self.height = self.display_surface.get_size()[1] * 0.8
       self.width = self.display_surface.get_size()[0] // 6
+      self.create_items()
       
       # selection system
       self.selection_index = 0
@@ -64,6 +66,14 @@ class Upgrade:
       self.input()
       self.selection_cooldown()
       
+      for index, item in enumerate(self.item_list):
+          # get attributes
+          name = self.attribute_names[index]
+          value = self.player.get_value_by_index(index)
+          max_value = self.max_values[index]
+          cost = self.player.get_cost_by_index(index)
+          item.display(self.display_surface,0,'test',1,2,3)
+      
 class Item:
     def __init__(self,l,t,w,h,index,font):
         self.rect = pygame.Rect(l,t,w,h)
@@ -71,4 +81,4 @@ class Item:
         self.font = font
         
     def display(self,surface,selection_num,name,value,max_value,cost):
-        pygame.draw.rect(surface,)
+        pygame.draw.rect(surface,UI_BG_COLOR,self.rect)
