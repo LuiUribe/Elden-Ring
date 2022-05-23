@@ -10,6 +10,7 @@ from ui import UI
 from enemy import Enemy
 from particles import Animation Player
 from magic import MagicPlayer
+from upgrade import Upgrade 
 
 class Level:
     def __init__(self):
@@ -32,6 +33,7 @@ class Level:
         
         # user interface
         self.ui = UI()
+        self.upgrade = Upgrade(self.player)
         
         # particles in particles py
         self.animation_player = AnimationPlayer()
@@ -146,9 +148,8 @@ class Level:
         self.visible_sprites.custom_draw(self.player)
                 self.ui.display(self.player)
         
-        if game_paused:
-            pass
-            # display upgrade menu
+        if self.game_paused:
+            self.upgrade.display()
         else:
             self.visible_sprites.update()
             self.visible_sprites.enemy_update(self.player)
